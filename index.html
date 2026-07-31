@@ -422,7 +422,7 @@ body.has-cursor a,body.has-cursor button,body.has-cursor summary,body.has-cursor
     </div>
     <div class="nav-cta">
       <a href="#agents" class="btn btn-ghost">Explore agents</a>
-      <a href="#" class="btn btn-primary" data-book-call>Book a call</a>
+      <span data-lz-auth style="display:inline-flex;align-items:center;gap:4px;margin-right:14px;font-size:.9rem;white-space:nowrap"></span><a href="#" class="btn btn-primary" data-book-call>Book a call</a>
     </div>
     <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -466,10 +466,10 @@ body.has-cursor a,body.has-cursor button,body.has-cursor summary,body.has-cursor
 
   <div class="container">
     <div class="stats">
-      <div class="stat reveal"><div class="n" data-count="120" data-suffix="+">0</div><div class="lbl">Agents deployed</div></div>
-      <div class="stat reveal d1"><div class="n" data-count="40" data-suffix="hrs">0</div><div class="lbl">Saved / week avg</div></div>
-      <div class="stat reveal d2"><div class="n" data-count="10" data-suffix=" days">0</div><div class="lbl">Avg build time</div></div>
-      <div class="stat reveal d3"><div class="n" data-count="98" data-suffix="%">0</div><div class="lbl">Client retention</div></div>
+      <div class="stat reveal"><div class="n" data-count="120" data-suffix="+">120+</div><div class="lbl">Agents deployed</div></div>
+      <div class="stat reveal d1"><div class="n" data-count="40" data-suffix="hrs">40hrs</div><div class="lbl">Saved / week avg</div></div>
+      <div class="stat reveal d2"><div class="n" data-count="10" data-suffix=" days">10 days</div><div class="lbl">Avg build time</div></div>
+      <div class="stat reveal d3"><div class="n" data-count="98" data-suffix="%">98%</div><div class="lbl">Client retention</div></div>
     </div>
   </div>
 </header>
@@ -749,7 +749,7 @@ body.has-cursor a,body.has-cursor button,body.has-cursor summary,body.has-cursor
         <h4>Get in touch</h4>
         <a href="tel:+918826124463"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg> +91 88261 24463</a>
         <a href="https://wa.me/918826124463"><svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg> WhatsApp us</a>
-        <a href="mailto:lzworth@gmail.com"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> lzworth@gmail.com</a>
+        <a href="mailto:support@lzworth.in"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> support@lzworth.in</a>
         <a style="pointer-events:none"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Building AI agents in India</a>
       </div>
     </div>
@@ -947,6 +947,32 @@ if(canHover&&!reduced){
   document.addEventListener('mouseleave',()=>{dot.style.opacity=ring.style.opacity=0;});
   document.addEventListener('mouseenter',()=>{dot.style.opacity=ring.style.opacity=1;});
 }
+</script>
+
+<!-- LZ Worth shared login (SSO) -->
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+const URL = 'https://opaqytdmenhksuntxyiy.supabase.co';
+const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wYXF5dGRtZW5oa3N1bnR4eWl5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0MDYxODcsImV4cCI6MjEwMDk4MjE4N30.2V53dVb_NcKAtZRcza_Yfq2mkOmdDK0Wyd4EhJeTrdQ';
+const D = '.lzworth.in', O = ';domain=' + D + ';path=/;secure;samesite=lax', C = 3200;
+const rd = n => { const m = document.cookie.match('(?:^|; )' + n.replace(/[.$?*|{}()[\]\\/+^]/g,'\\$&') + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : null; };
+const wr = (n,v) => document.cookie = n + '=' + encodeURIComponent(v) + ';max-age=31536000' + O;
+const dl = n => document.cookie = n + '=;max-age=0' + O;
+const store = { getItem(k){const f=rd(k);if(f!==null)return f;let n=rd(k+'.n');if(!n)return null;n=+n;let o='';for(let i=0;i<n;i++){const c=rd(k+'.'+i);if(c===null)return null;o+=c}return o},
+  setItem(k,v){const on=rd(k+'.n');if(on){for(let i=0;i<+on;i++)dl(k+'.'+i);dl(k+'.n')}if(v.length<=C)wr(k,v);else{dl(k);const p=Math.ceil(v.length/C);for(let i=0;i<p;i++)wr(k+'.'+i,v.slice(i*C,(i+1)*C));wr(k+'.n',''+p)}},
+  removeItem(k){dl(k);const on=rd(k+'.n');if(on){for(let i=0;i<+on;i++)dl(k+'.'+i);dl(k+'.n')}} };
+const sb = createClient(URL, KEY, { auth:{ persistSession:true, autoRefreshToken:true, storageKey:'lz-auth', storage:store } });
+window.lzSupabase = sb;
+const { data } = await sb.auth.getUser();
+const user = (data && data.user) || null;
+window.lzUser = user;
+if (user) { try { await sb.from('profiles').upsert({ id:user.id, email:user.email, name:(user.user_metadata?.name||user.user_metadata?.full_name||user.email.split('@')[0]), origin:location.hostname, last_seen:new Date().toISOString() }, { onConflict:'id' }); } catch(e){} }
+document.querySelectorAll('[data-lz-auth]').forEach(el => {
+  el.innerHTML = user
+    ? `<span style="font-weight:600">${(user.user_metadata?.name||user.email.split('@')[0]).split(' ')[0]}</span> <button type="button" data-lz-out style="background:none;border:0;color:#F2B84B;cursor:pointer;font:inherit">Sign out</button>`
+    : `<a href="https://lzworth.in/signin?next=${encodeURIComponent(location.href)}" style="color:#F2B84B">Sign in</a>`;
+});
+document.addEventListener('click', e => { if (e.target.closest('[data-lz-out]')) sb.auth.signOut().then(() => location.reload()); });
 </script>
 </body>
 </html>
