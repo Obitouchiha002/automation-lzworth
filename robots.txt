@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://lzworth.com/sitemap.xml
+
+Sitemap: https://automation.lzworth.in/sitemap.xml
