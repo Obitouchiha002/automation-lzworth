@@ -16,7 +16,7 @@ Single-file, dependency-free landing site for LZWORTH (AI automation agency).
   - Instagram → instagram.com/lzworth.in
   - LinkedIn → linkedin.com/company/lzworth
   - YouTube → youtube.com/@lzworth
-  - WhatsApp → wa.me/918826124463
+  - WhatsApp → wa.me/918800628376
   - Email → lzworth@gmail.com
   - Domain/canonical/schema updated to lzworth.in
 - **Fake reviews removed.** Replaced with an honest "Our Promise" section (14-day guarantee, full ownership, transparent pricing) + a "See our work on Instagram" link. No invented testimonials.
